@@ -41,7 +41,7 @@ enum L9110moter {
 let con_le = 0;
 let con_op = 0;
 
-//% color="#74ad1d" block="ﾕｰﾚｶﾌﾞﾛｯｸ2.4"
+//% weight= 100 color="#74ad1d" block="ﾕｰﾚｶﾌﾞﾛｯｸ2.4"
 namespace eureka_blocks {
   //% color="#ff3d03" weight=59 blockId=eureka_buz_set block="ﾕｰﾚｶIOﾎﾞｯｸｽで音をならす" group="1_初期設定"
   export function eureka_buz_set() {
