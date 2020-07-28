@@ -53,7 +53,8 @@ namespace eureka_blocks {
      */
 
     //% blockId=eureka_buz_set 
-    //% block=%command|ﾕｰﾚｶIOﾎﾞｯｸｽで音をならす
+    //% block=ﾕｰﾚｶIOﾎﾞｯｸｽで音をならす
+    // group="1 初期設定"
     //% color="#ff3d03" 
     //% weight=59
 
