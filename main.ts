@@ -60,7 +60,7 @@ namespace eureka_blocks {
      * TFW-VO1にローマ字を日本語で発声させます。エラーの場合はエラーコードを発声します。「シリアル通信」や「コンソールを表示」との同時使用はできません。
      * @param command string of command, eg: konnitiwa
      */
-    //% color="#4741f1" weight=54 blockId=eureka_tl_blue block="青信号 点灯|%mode| |%pin|" group="2_信号機ユニット"
+    //% color="#4741f1" weight=54 blockId=eureka_tl_blue block=%command|"青信号 点灯|%mode| |%pin|" group="2_信号機ユニット"
     export function eureka_tl_blue(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
       case eureka_tlp.Aﾎﾟｰﾄ:
