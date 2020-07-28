@@ -45,10 +45,7 @@ let con_op = 0;
 
 namespace eureka_blocks {
 
-    /**
-     * micro:bit本体の明るさセンサーがしきい値より暗い（または明るい）場合に真を返します。
-     * @param lightThreshold number of brightness-threshold, eg: 15
-     */
+
     
     //% blockId=eureka_buz_set block="ﾕｰﾚｶIOﾎﾞｯｸｽで音をならす"
     //% color="#ff3d03" 
@@ -59,7 +56,10 @@ namespace eureka_blocks {
     pins.analogSetPitchPin(AnalogPin.P8);
   }
 
-
+    /**
+     * TFW-VO1にローマ字を日本語で発声させます。エラーの場合はエラーコードを発声します。「シリアル通信」や「コンソールを表示」との同時使用はできません。
+     * @param command string of command, eg: konnitiwa
+     */
     //% color="#4741f1" weight=54 blockId=eureka_tl_blue block="青信号 点灯|%mode| |%pin|" group="2_信号機ユニット"
     export function eureka_tl_blue(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
