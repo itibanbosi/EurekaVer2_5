@@ -548,6 +548,12 @@ namespace eureka_blocks_soro {
 //% color="#3943c6" block="ユーレカ自動車" icon="\uf1b9"
 
 namespace eureka_blocks_car {
+  //% color="#ff3d03" weight=59 blockId=eurekacar_buz_set block="ﾕｰﾚｶ車で音をならす" group="1_初期設定"
+  export function eurekacar_buz_set() {
+    pins.analogSetPitchPin(AnalogPin.P0);
+  }
+  
+
   //% color="#ffa800" weight=99　blockId=servos_condition
   //% block="左右バランス調整 左へ |%le| 右へ" group="1　調整"
   //% le.min=-100 le.max=100
