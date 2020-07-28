@@ -41,8 +41,11 @@ enum L9110moter {
 let con_le = 0;
 let con_op = 0;
 
-//% weight= 80 color="#74ad1d" block="ﾕｰﾚｶﾌﾞﾛｯｸ2.4"
-namespace eureka_blocks {
+//% color="#74ad1d" block="ﾕｰﾚｶﾌﾞﾛｯｸ2.4"
+    /**
+     * micro:bit本体の明るさセンサーが暗い場合（20未満）に真を返します。
+     */
+  namespace eureka_blocks {
   //% color="#ff3d03" weight=59 blockId=eureka_buz_set block="ﾕｰﾚｶIOﾎﾞｯｸｽで音をならす" group="1_初期設定"
   export function eureka_buz_set() {
     pins.analogSetPitchPin(AnalogPin.P8);
