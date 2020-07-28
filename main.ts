@@ -46,8 +46,10 @@ let con_op = 0;
 namespace eureka_blocks {
 
     /**
-     * micro:bit本体の明るさセンサーが暗い場合（20未満）に真を返します。
+     * micro:bit本体の明るさセンサーがしきい値より暗い（または明るい）場合に真を返します。
+     * @param lightThreshold number of brightness-threshold, eg: 15
      */
+    
     //% blockId=eureka_buz_set block="ﾕｰﾚｶIOﾎﾞｯｸｽで音をならす"
     //% color="#ff3d03" 
     //% group="1_初期設定"
@@ -57,9 +59,7 @@ namespace eureka_blocks {
     pins.analogSetPitchPin(AnalogPin.P8);
   }
 
-    /**
-     * micro:bit本体の明るさセンサーが暗い場合（20未満）に真を返します。
-     */
+
     //% color="#4741f1" weight=54 blockId=eureka_tl_blue block="青信号 点灯|%mode| |%pin|" group="2_信号機ユニット"
     export function eureka_tl_blue(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
