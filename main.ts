@@ -47,7 +47,13 @@ namespace eureka_blocks {
 
 
     
-    //% blockId=eureka_buz_set block="ﾕｰﾚｶIOﾎﾞｯｸｽで音をならす"
+    /**
+     * TFW-VO1にローマ字を日本語で発声させます。エラーの場合はエラーコードを発声します。「シリアル通信」や「コンソールを表示」との同時使用はできません。
+     * @param command string of command, eg: konnitiwa
+     */
+
+    //% blockId=eureka_buz_set 
+    //% block=%command|ﾕｰﾚｶIOﾎﾞｯｸｽで音をならす
     //% color="#ff3d03" 
     //% group="1_初期設定"
     //% weight=59
@@ -56,11 +62,8 @@ namespace eureka_blocks {
     pins.analogSetPitchPin(AnalogPin.P8);
   }
 
-    /**
-     * TFW-VO1にローマ字を日本語で発声させます。エラーの場合はエラーコードを発声します。「シリアル通信」や「コンソールを表示」との同時使用はできません。
-     * @param command string of command, eg: konnitiwa
-     */
-    //% color="#4741f1" weight=54 blockId=eureka_tl_blue block=%command|"青信号 点灯|%mode| |%pin|" group="2_信号機ユニット"
+
+    //% color="#4741f1" weight=54 blockId=eureka_tl_blue block="青信号 点灯|%mode| |%pin|" group="2_信号機ユニット"
     export function eureka_tl_blue(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
       case eureka_tlp.Aﾎﾟｰﾄ:
