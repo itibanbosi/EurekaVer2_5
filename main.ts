@@ -40,7 +40,7 @@ enum L9110moter {
 }
 let con_le = 0;
 let con_op = 0;
-//% groups='["//% groups='["1_初期設定","2_信号機ユニット"]'
+
 //% color="#74ad1d" block="ﾕｰﾚｶﾌﾞﾛｯｸ2.4"
 
 namespace eureka_blocks {
@@ -50,15 +50,18 @@ namespace eureka_blocks {
      */
     //% blockId=eureka_buz_set block="ﾕｰﾚｶIOﾎﾞｯｸｽで音をならす"
     //% color="#ff3d03" 
-    //% weight=59
     //% group="1_初期設定"
+    //% weight=59
 
     export function eureka_buz_set() {
     pins.analogSetPitchPin(AnalogPin.P8);
   }
 
-  //% color="#4741f1" weight=54 blockId=eureka_tl_blue block="青信号 点灯|%mode| |%pin|" group="2_信号機ユニット"
-  export function eureka_tl_blue(mode: onoff, pin: eureka_tlp) {
+    /**
+     * micro:bit本体の明るさセンサーが暗い場合（20未満）に真を返します。
+     */
+    //% color="#4741f1" weight=54 blockId=eureka_tl_blue block="青信号 点灯|%mode| |%pin|" group="2_信号機ユニット"
+    export function eureka_tl_blue(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
       case eureka_tlp.Aﾎﾟｰﾄ:
         if (mode == onoff.ON) {
