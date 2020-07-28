@@ -185,6 +185,10 @@ namespace eureka_blocks {
         }
     }
   }
+}
+//% color="#74ad1d" block="単体ﾕﾆｯﾄ" icon="\uf1b9"
+
+namespace eureka_blocks_soro {
 
   //% color="#6041f1"  weight=23 blockId=eureka_L9110 block="ﾓｰﾀｰL |%mode| |%pin|" group="4_ユーレカ装置"
   //% mode.min=-100 mode.max=100
