@@ -55,7 +55,6 @@ namespace eureka_blocks {
     //% blockId=eureka_buz_set 
     //% block=%command|ﾕｰﾚｶIOﾎﾞｯｸｽで音をならす
     //% color="#ff3d03" 
-    //% group="1_初期設定"
     //% weight=59
 
     export function eureka_buz_set() {
