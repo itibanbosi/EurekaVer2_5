@@ -572,18 +572,12 @@ namespace eureka_blocks_car {
   //% block="前 " group="3　基本の動き"
   export function forward(): void {
     if (con_le >= 0) {
-      pins.servoWritePin(
-        AnalogPin.P14,
-        90 - (90 * (con_op + 100)) / 100 + con_le
-      );
+      pins.servoWritePin(AnalogPin.P14,90 - (90 * (con_op + 100)) / 100 + con_le);
       pins.servoWritePin(AnalogPin.P13, 90 + (90 * (con_op + 100)) / 100);
     }
     if (con_le < 0) {
       pins.servoWritePin(AnalogPin.P14, 90 - (90 * (con_op + 100)) / 100);
-      pins.servoWritePin(
-        AnalogPin.P13,
-        90 + (90 * (con_op + 100)) / 100 + con_le
-      );
+      pins.servoWritePin(AnalogPin.P13, 90 + (90 * (con_op + 100)) / 100 + con_le);
     }
   }
 
@@ -591,18 +585,12 @@ namespace eureka_blocks_car {
   //% block="後ろ" group="3　基本の動き"
   export function backward(): void {
     if (con_le >= 0) {
-      pins.servoWritePin(
-        AnalogPin.P14,
-        90 + (90 * (con_op + 100)) / 100 - con_le
-      );
+      pins.servoWritePin( AnalogPin.P14,90 + (90 * (con_op + 100)) / 100 - con_le );
       pins.servoWritePin(AnalogPin.P13, 90 - (90 * (con_op + 100)) / 100);
     }
     if (con_le < 0) {
       pins.servoWritePin(AnalogPin.P14, 90 + (90 * (con_op + 100)) / 100);
-      pins.servoWritePin(
-        AnalogPin.P13,
-        90 - (90 * (con_op + 100)) / 100 - con_le
-      );
+      pins.servoWritePin(AnalogPin.P13, 90 - (90 * (con_op + 100)) / 100 - con_le );
     }
   }
 
@@ -610,18 +598,12 @@ namespace eureka_blocks_car {
   //% block="左" group="3　基本の動き"
   export function left(): void {
     if (con_le >= 0) {
-      pins.servoWritePin(
-        AnalogPin.P14,
-        90 - (90 * (con_op + 100)) / 100 + con_le
-      );
+      pins.servoWritePin(AnalogPin.P14,90 - (90 * (con_op + 100)) / 100 + con_le);
       pins.servoWritePin(AnalogPin.P13, 90 - (90 * (con_op + 100)) / 100);
     }
     if (con_le < 0) {
       pins.servoWritePin(AnalogPin.P14, 90 - (90 * (con_op + 100)) / 100);
-      pins.servoWritePin(
-        AnalogPin.P13,
-        90 - (90 * (con_op + 100)) / 100 - con_le
-      );
+      pins.servoWritePin(AnalogPin.P13, 90 - (90 * (con_op + 100)) / 100 - con_le);
     }
   }
 
@@ -629,18 +611,12 @@ namespace eureka_blocks_car {
   //% block="右" group="3　基本の動き"
   export function right(): void {
     if (con_le >= 0) {
-      pins.servoWritePin(
-        AnalogPin.P14,
-        90 + (90 * (con_op + 100)) / 100 - con_le
-      );
+      pins.servoWritePin(AnalogPin.P14,90 + (90 * (con_op + 100)) / 100 - con_le );
       pins.servoWritePin(AnalogPin.P13, 90 + (90 * (con_op + 100)) / 100);
     }
     if (con_le < 0) {
       pins.servoWritePin(AnalogPin.P14, 90 + (90 * (con_op + 100)) / 100);
-      pins.servoWritePin(
-        AnalogPin.P13,
-        90 + (90 * (con_op + 100)) / 100 + con_le
-      );
+      pins.servoWritePin(AnalogPin.P13, 90 + (90 * (con_op + 100)) / 100 + con_le);
     }
   }
 
@@ -664,10 +640,7 @@ namespace eureka_blocks_car {
     }
     if (set_lr < 0) {
       pins.servoWritePin(AnalogPin.P14, 90 - (90 * (con_op + 100)) / 100);
-      pins.servoWritePin(
-        AnalogPin.P13,
-        90 + (90 * (con_op + 100)) / 100 + set_lr
-      );
+      pins.servoWritePin(AnalogPin.P13, 90 + (90 * (con_op + 100)) / 100 + set_lr );
     }
   }
 
