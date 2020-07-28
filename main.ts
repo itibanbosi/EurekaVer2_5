@@ -43,7 +43,8 @@ let con_op = 0;
 
 //% color="#74ad1d" block="ﾕｰﾚｶﾌﾞﾛｯｸ2.4"
 
-  namespace eureka_blocks {
+namespace eureka_blocks {
+
     /**
      * micro:bit本体の明るさセンサーが暗い場合（20未満）に真を返します。
      */
@@ -51,7 +52,7 @@ let con_op = 0;
     //% color="#ff3d03" 
     //% weight=59
     //% group="1_初期設定"
-  export function eureka_buz_set() {
+    export function eureka_buz_set() {
     pins.analogSetPitchPin(AnalogPin.P8);
   }
 
