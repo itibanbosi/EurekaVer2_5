@@ -201,7 +201,7 @@ namespace eureka_blocks {
     }
   }
 }
-//% color="#74ad1d" block="単体ﾕﾆｯﾄ" icon="\uf1b9"
+//% color="#74ad1d" block="単体ﾕﾆｯﾄ" 
 
 namespace eureka_blocks_soro {
 
@@ -496,7 +496,7 @@ namespace eureka_blocks_soro {
         pins.digitalWritePin(DigitalPin.P13, 0);
         // read
         const d1 = pins.pulseIn(DigitalPin.P14, PulseValue.High, 500 * 58);
-        return Math.idiv(d1, 58);
+        return Math.round(Math.idiv(d1, 58)*1.5);
       case eureka_tlp.Bﾎﾟｰﾄ:
         pins.setPull(DigitalPin.P15, PinPullMode.PullNone);
         pins.digitalWritePin(DigitalPin.P15, 0);
@@ -506,7 +506,7 @@ namespace eureka_blocks_soro {
         pins.digitalWritePin(DigitalPin.P15, 0);
         // read
         const d2 = pins.pulseIn(DigitalPin.P16, PulseValue.High, 500 * 58);
-        return Math.idiv(d2, 58);
+        return Math.round(Math.idiv(d2, 58)*1.5);
     }
   }
 
