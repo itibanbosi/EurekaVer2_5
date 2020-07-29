@@ -757,7 +757,7 @@ namespace eureka_blocks_car {
     pins.digitalWritePin(DigitalPin.P8, 0);
     // read
     const d = pins.pulseIn(DigitalPin.P16, PulseValue.High, 500 * 58);
-    return Math.idiv(d, 58) * 1.5;
+    return Math.round(Math.idiv(d, 58) * 1.5) ;
   }
 
   //% color="#009A00" weight=20 block="きょりが |%limit| cmより小さく" group="4　センサー"
