@@ -41,7 +41,7 @@ enum L9110moter {
 let con_le = 0;
 let con_op = 0;
 
-//% color="#74ad1d" block="ﾕｰﾚｶﾌﾞﾛｯｸ2.4"
+//% color="#74ad1d" block="ﾕｰﾚｶﾌﾞﾛｯｸ2.5"
 
 namespace eureka_blocks {
 
