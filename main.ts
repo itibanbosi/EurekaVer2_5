@@ -713,8 +713,8 @@ namespace eureka_blocks_car {
   //% color="#6041f1"  weight=23 block="右が黒線をふんだ" group="3　センサー" group="4　センサー"
   export function photo_R_out(): boolean {
     if (
-      (pins.analogReadPin(AnalogPin.P1) / 1023) * 100 > 40 &&
-      (pins.analogReadPin(AnalogPin.P2) / 1023) * 100 < 40
+      (pins.analogReadPin(AnalogPin.P1) / 1023) * 100 > 20 &&
+      (pins.analogReadPin(AnalogPin.P2) / 1023) * 100 < 20
     ) {
       return true;
     } else {
