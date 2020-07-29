@@ -725,8 +725,8 @@ namespace eureka_blocks_car {
   //% color="#6041f1"  weight=24 block="左が黒線をふんだ" group="3　センサー" group="4　センサー"
   export function photo_L_out(): boolean {
     if (
-      (pins.analogReadPin(AnalogPin.P1) / 1023) * 100 < 40 &&
-      (pins.analogReadPin(AnalogPin.P2) / 1023) * 100 > 40
+      (pins.analogReadPin(AnalogPin.P1) / 1023) * 100 < 20 &&
+      (pins.analogReadPin(AnalogPin.P2) / 1023) * 100 > 20
     ) {
       return true;
     } else {
@@ -737,8 +737,8 @@ namespace eureka_blocks_car {
   //% color="#6041f1"  weight=25 block="左右どちらも黒線をふんでいない" group="4　センサー"
   export function photo_LR_out(): boolean {
     if (
-      (pins.analogReadPin(AnalogPin.P1) / 1023) * 100 > 40 &&
-      (pins.analogReadPin(AnalogPin.P2) / 1023) * 100 > 40
+      (pins.analogReadPin(AnalogPin.P1) / 1023) * 100 > 20 &&
+      (pins.analogReadPin(AnalogPin.P2) / 1023) * 100 > 20
     ) {
       return true;
     } else {
