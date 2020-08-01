@@ -481,7 +481,7 @@ namespace eureka_blocks_soro {
   export function ping(pin: eureka_tlp): number {
     switch (pin) {
       case eureka_tlp.Aﾎﾟｰﾄ:
-        basic.pause(10);
+        basic.pause(20);
         pins.setPull(DigitalPin.P13, PinPullMode.PullNone);
         pins.digitalWritePin(DigitalPin.P13, 0);
         control.waitMicros(2);
@@ -492,7 +492,7 @@ namespace eureka_blocks_soro {
         const d1 = pins.pulseIn(DigitalPin.P14, PulseValue.High, 500 * 58);
         return Math.round(Math.idiv(d1, 58)*1.5);
       case eureka_tlp.Bﾎﾟｰﾄ:
-        basic.pause(10);
+        basic.pause(20);
         pins.setPull(DigitalPin.P15, PinPullMode.PullNone);
         pins.digitalWritePin(DigitalPin.P15, 0);
         control.waitMicros(2);
@@ -744,6 +744,7 @@ namespace eureka_blocks_car {
   //% color="#009A00" weight=22 blockId=sonar_ping_2 block="きょりｾﾝｻ" group="4　センサー"
   export function ping() {
     // send
+    basic.pause(20);
     pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
     pins.digitalWritePin(DigitalPin.P8, 0);
     control.waitMicros(2);
@@ -759,6 +760,7 @@ namespace eureka_blocks_car {
   //% limit.min=0 limit.max=50
   export function sonar_ping_3(limit: number): boolean {
     // send
+    basic.pause(20);
     pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
     pins.digitalWritePin(DigitalPin.P8, 0);
     control.waitMicros(2);
