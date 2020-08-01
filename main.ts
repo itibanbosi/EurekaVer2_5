@@ -660,18 +660,9 @@ namespace eureka_blocks_car {
   //% block="前進バランス 左へ |%set_lr| 右へ" group="3　基本の動き"
   //% set_lr.min=-90 set_lr.max=90
   export function pro_lr(set_lr: number): void {
-    if (set_lr >= 0) {
-      pins.servoWritePin(
-        AnalogPin.P14,
-        90 - (90 * (con_op + 100)) / 100 + set_lr
-      );
+      pins.servoWritePin(AnalogPin.P14,90 - (90 * (con_op + 100)) / 100 );
       pins.servoWritePin(AnalogPin.P13, 90 + (90 * (con_op + 100)) / 100);
     }
-    if (set_lr < 0) {
-      pins.servoWritePin(AnalogPin.P14, 90 - (90 * (con_op + 100)) / 100);
-      pins.servoWritePin(AnalogPin.P13, 90 + (90 * (con_op + 100)) / 100 + set_lr );
-    }
-  }
 
   //% color="#3943c6" weight=58　blockId=servo_pro_l
   //% block="左車輪 出力 |%set_l| " group="3　基本の動き"
