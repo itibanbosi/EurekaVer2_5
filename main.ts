@@ -630,7 +630,7 @@ namespace eureka_blocks_car {
     }
   }
 
-  //% color="#3943c6" weight=64 blockId=servos_right
+  //% color="#3943c6" weight=63 blockId=servos_right
   //% block="ななめ右前" group="3　基本の動き"
   export function forward_right(): void {
     if (con_le >= 0) {
@@ -639,7 +639,7 @@ namespace eureka_blocks_car {
     }
   }
 
-      //% color="#3943c6" weight=64 blockId=servos_right
+      //% color="#3943c6" weight=62 blockId=servos_right
   //% block="ななめ左前" group="3　基本の動き"
   export function forward_left(): void {
     if (con_le >= 0) {
@@ -648,7 +648,7 @@ namespace eureka_blocks_car {
     }
   }
 
-  //% color="#3943c6" weight=62 blockId=servos_stop
+  //% color="#3943c6" weight=61 blockId=servos_stop
   //% block="止まる" group="3　基本の動き"
   export function stop(): void {
     pins.servoWritePin(AnalogPin.P13, 90);
