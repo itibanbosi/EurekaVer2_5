@@ -634,7 +634,7 @@ namespace eureka_blocks_car {
   //% block="ななめ右前" group="3　基本の動き"
   export function forward_right(): void {
     if (con_le >= 0) {
-      pins.servoWritePin(AnalogPin.P14,70);
+      pins.servoWritePin(AnalogPin.P14,75);
       pins.servoWritePin(AnalogPin.P13, 160);
     }
   }
@@ -644,7 +644,7 @@ namespace eureka_blocks_car {
   export function forward_left(): void {
     if (con_le >= 0) {
       pins.servoWritePin(AnalogPin.P14,20 );
-      pins.servoWritePin(AnalogPin.P13, 110);
+      pins.servoWritePin(AnalogPin.P13, 105);
     }
   }
 
