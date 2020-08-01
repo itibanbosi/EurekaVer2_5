@@ -45,13 +45,6 @@ let con_op = 0;
 
 namespace eureka_blocks {
 
-
-    
-    /**
-     * TFW-VO1にローマ字を日本語で発声させます。エラーの場合はエラーコードを発声します。「シリアル通信」や「コンソールを表示」との同時使用はできません。
-     * @param command string of command, eg: konnitiwa
-     */
-
     //% blockId=eureka_buz_set 
     //% block=ﾕｰﾚｶIOﾎﾞｯｸｽで音をならす
     // group="1 初期設定"
@@ -488,6 +481,7 @@ namespace eureka_blocks_soro {
   export function ping(pin: eureka_tlp): number {
     switch (pin) {
       case eureka_tlp.Aﾎﾟｰﾄ:
+        basic.pause(10);
         pins.setPull(DigitalPin.P13, PinPullMode.PullNone);
         pins.digitalWritePin(DigitalPin.P13, 0);
         control.waitMicros(2);
@@ -498,6 +492,7 @@ namespace eureka_blocks_soro {
         const d1 = pins.pulseIn(DigitalPin.P14, PulseValue.High, 500 * 58);
         return Math.round(Math.idiv(d1, 58)*1.5);
       case eureka_tlp.Bﾎﾟｰﾄ:
+        basic.pause(10);
         pins.setPull(DigitalPin.P15, PinPullMode.PullNone);
         pins.digitalWritePin(DigitalPin.P15, 0);
         control.waitMicros(2);
