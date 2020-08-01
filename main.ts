@@ -607,27 +607,15 @@ namespace eureka_blocks_car {
   //% color="#3943c6" weight=66blockId=servos_left
   //% block="左" group="3　基本の動き"
   export function left(): void {
-    if (con_le >= 0) {
       pins.servoWritePin(AnalogPin.P14,90 - (90 * (con_op + 100)) / 100 );
       pins.servoWritePin(AnalogPin.P13, 90 );
-    }
-    if (con_le < 0) {
-      pins.servoWritePin(AnalogPin.P14, 90 );
-      pins.servoWritePin(AnalogPin.P13, 90 - (90 * (con_op + 100)) / 100 - con_le);
-    }
   }
 
   //% color="#3943c6" weight=64 blockId=servos_right
   //% block="右" group="3　基本の動き"
   export function right(): void {
-    if (con_le >= 0) {
-      pins.servoWritePin(AnalogPin.P14,90 + (90 * (con_op + 100)) / 100 - con_le );
-      pins.servoWritePin(AnalogPin.P13, 90 + (90 * (con_op + 100)) / 100);
-    }
-    if (con_le < 0) {
-      pins.servoWritePin(AnalogPin.P14, 90 + (90 * (con_op + 100)) / 100);
-      pins.servoWritePin(AnalogPin.P13, 90 + (90 * (con_op + 100)) / 100 + con_le);
-    }
+      pins.servoWritePin(AnalogPin.P14,90 );
+      pins.servoWritePin(AnalogPin.P13, 90 + (90 * (con_op + 100)) / 100 );
   }
 
   //% color="#3943c6" weight=63 blockId=servos_forward_right
