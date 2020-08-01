@@ -630,7 +630,7 @@ namespace eureka_blocks_car {
     }
   }
 
-  //% color="#3943c6" weight=63 blockId=servos_right
+  //% color="#3943c6" weight=63 blockId=servos_forward_right
   //% block="ななめ右前" group="3　基本の動き"
   export function forward_right(): void {
     if (con_le >= 0) {
@@ -639,7 +639,7 @@ namespace eureka_blocks_car {
     }
   }
 
-      //% color="#3943c6" weight=62 blockId=servos_right
+      //% color="#3943c6" weight=62 blockId=servos_forward_left
   //% block="ななめ左前" group="3　基本の動き"
   export function forward_left(): void {
     if (con_le >= 0) {
