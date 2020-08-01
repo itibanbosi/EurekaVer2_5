@@ -198,7 +198,7 @@ namespace eureka_blocks {
 
 namespace eureka_blocks_soro {
 
-  //% color="#6041f1"  weight=23 blockId=eureka_L9110 block="ﾓｰﾀｰL |%mode| |%pin|" group="4_ユーレカ装置"
+  //% color="#6041f1"  weight=23 blockId=eureka_L9110 block="ﾓｰﾀｰﾌｧﾝL |%mode| |%pin|" group="4_ユーレカ装置"
   //% mode.min=-100 mode.max=100
   export function L9110driver(port: eureka_denki, mode: number) {
     switch (port) {
@@ -630,6 +630,24 @@ namespace eureka_blocks_car {
     }
   }
 
+  //% color="#3943c6" weight=64 blockId=servos_right
+  //% block="ななめ右前" group="3　基本の動き"
+  export function forward_right(): void {
+    if (con_le >= 0) {
+      pins.servoWritePin(AnalogPin.P14,50);
+      pins.servoWritePin(AnalogPin.P13, 160);
+    }
+  }
+
+      //% color="#3943c6" weight=64 blockId=servos_right
+  //% block="ななめ左前" group="3　基本の動き"
+  export function forward_left(): void {
+    if (con_le >= 0) {
+      pins.servoWritePin(AnalogPin.P14,20 );
+      pins.servoWritePin(AnalogPin.P13, 150);
+    }
+  }
+
   //% color="#3943c6" weight=62 blockId=servos_stop
   //% block="止まる" group="3　基本の動き"
   export function stop(): void {
@@ -734,6 +752,18 @@ namespace eureka_blocks_car {
     if (
       (pins.analogReadPin(AnalogPin.P1) / 1023) * 100 > 20 &&
       (pins.analogReadPin(AnalogPin.P2) / 1023) * 100 > 20
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  //% color="#6041f1"  weight=25 block="左右とも黒線をふんでいる" group="4　センサー"
+  export function photo_LR_black(): boolean {
+    if (
+      (pins.analogReadPin(AnalogPin.P1) / 1023) * 100 < 20 &&
+      (pins.analogReadPin(AnalogPin.P2) / 1023) * 100 < 20
     ) {
       return true;
     } else {
