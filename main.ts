@@ -591,7 +591,7 @@ namespace eureka_blocks_car {
     }
   }
 
-  //% color="#3943c6" weight=68 blockId=servos_backward
+  //% color="#3943c6" weight=69 blockId=servos_backward
   //% block="後ろ" group="3　基本の動き"
   export function backward(): void {
     if (con_le >= 0) {
@@ -604,21 +604,21 @@ namespace eureka_blocks_car {
     }
   }
 
-  //% color="#3943c6" weight=66blockId=servos_left
+  //% color="#3943c6" weight=67 blockId=servos_left
   //% block="左" group="3　基本の動き"
   export function left(): void {
       pins.servoWritePin(AnalogPin.P14,90 - (90 * (con_op + 100)) / 100 );
       pins.servoWritePin(AnalogPin.P13, 90 );
   }
 
-  //% color="#3943c6" weight=64 blockId=servos_right
+  //% color="#3943c6" weight=66 blockId=servos_right
   //% block="右" group="3　基本の動き"
   export function right(): void {
       pins.servoWritePin(AnalogPin.P14,90 );
       pins.servoWritePin(AnalogPin.P13, 90 + (90 * (con_op + 100)) / 100 );
   }
 
-  //% color="#3943c6" weight=63 blockId=servos_forward_right
+  //% color="#3943c6" weight=65 blockId=servos_forward_right
   //% block="ななめ右前" group="3　基本の動き"
   export function forward_right(): void {
     if (con_le >= 0) {
@@ -627,7 +627,7 @@ namespace eureka_blocks_car {
     }
   }
 
-      //% color="#3943c6" weight=62 blockId=servos_forward_left
+      //% color="#3943c6" weight=64 blockId=servos_forward_left
   //% block="ななめ左前" group="3　基本の動き"
   export function forward_left(): void {
     if (con_le >= 0) {
@@ -642,21 +642,21 @@ namespace eureka_blocks_car {
     pins.servoWritePin(AnalogPin.P13, 90);
     pins.servoWritePin(AnalogPin.P14, 90);
   }
-  //% color="#3943c6" weight=66blockId=servos_left_rotation
+  //% color="#3943c6" weight=63blockId=servos_left_rotation
   //% block="左回転" group="3　基本の動き"
   export function left_rotation(): void {
       pins.servoWritePin(AnalogPin.P14,90 - (90 * (con_op + 100)) / 100 );
       pins.servoWritePin(AnalogPin.P13, 90 - (90 * (con_op + 100)) / 100);
     }
 
-  //% color="#3943c6" weight=64 blockId=servos_right_rotation
+  //% color="#3943c6" weight=62 blockId=servos_right_rotation
   //% block="右回転" group="3　基本の動き"
   export function right_rotation(): void {
       pins.servoWritePin(AnalogPin.P14,90 + (90 * (con_op + 100)) / 100 );
       pins.servoWritePin(AnalogPin.P13, 90 + (90 * (con_op + 100)) / 100);
     }
 
-  //% color="#3943c6" weight=60　blockId=servo_pro_lr
+  //% color="#3943c6" weight=59　blockId=servo_pro_lr
   //% block="前進バランス 左へ |%set_lr| 右へ" group="3　基本の動き"
   //% set_lr.min=-90 set_lr.max=90
   export function pro_lr(set_lr: number): void {
@@ -678,7 +678,7 @@ namespace eureka_blocks_car {
     pins.servoWritePin(AnalogPin.P14, 90 - (90 * set_r) / 100);
   }
 
-  //% color="#3943c6" weight=54 blockId=servos_neutral
+  //% color="#3943c6" weight=60 blockId=servos_neutral
   //% block="サーボをニュートラルする" group="3　基本の動き"
   export function neutral(): void {
     pins.digitalWritePin(DigitalPin.P13, 0);
