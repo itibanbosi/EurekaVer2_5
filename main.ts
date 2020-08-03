@@ -44,9 +44,6 @@ enum sonar_avg{
     高速低精度,
 }
 
-
-
-
 //% color="#74ad1d" block="ﾕｰﾚｶﾌﾞﾛｯｸ2.52"
 
 namespace eureka_blocks {
@@ -494,29 +491,30 @@ namespace eureka_blocks_soro {
         if (sonar_quality==sonar_avg.高速低精度){
             sonar_quality=1
         }
-    let  i=0
-    let  d1=0
-    let  d2=0
+    let  d1=0;
+    let  d2=0;
+
     switch (pin) {
 
 
     case eureka_tlp.Aﾎﾟｰﾄ:
-    while( i < sonar_quality){
-        basic.pause(10);
-        pins.setPull(DigitalPin.P13, PinPullMode.PullNone);
-        pins.digitalWritePin(DigitalPin.P13, 0);
-        control.waitMicros(2);
-        pins.digitalWritePin(DigitalPin.P13, 1);
-        control.waitMicros(10);
-        pins.digitalWritePin(DigitalPin.P13, 0);
-        // read
-        d1 = pins.pulseIn(DigitalPin.P14, PulseValue.High, 500 * 58);
-        d2=d2+d1;
-    }
-        return Math.round(Math.idiv(d2/sonar_quality, 58)*1.5);
+        for ( let i=0 ; i<sonar_quality ; i++ ){
+            basic.pause(10);
+            pins.setPull(DigitalPin.P13, PinPullMode.PullNone);
+            pins.digitalWritePin(DigitalPin.P13, 0);
+            control.waitMicros(2);
+            pins.digitalWritePin(DigitalPin.P13, 1);
+            control.waitMicros(10);
+            pins.digitalWritePin(DigitalPin.P13, 0);
+            // read
+            d1 = pins.pulseIn(DigitalPin.P14, PulseValue.High, 500 * 58);
+            d2=d2+d1;
+            }
+            return Math.round(Math.idiv(d2/sonar_quality, 58)*1.5);
+        break;
 
     case eureka_tlp.Bﾎﾟｰﾄ:
-    while (i<sonar_quality){
+        for  ( let i=0 ; i<sonar_quality; i++){
         basic.pause(20);
         pins.setPull(DigitalPin.P15, PinPullMode.PullNone);
         pins.digitalWritePin(DigitalPin.P15, 0);
@@ -527,7 +525,7 @@ namespace eureka_blocks_soro {
         // read
         d1 = pins.pulseIn(DigitalPin.P16, PulseValue.High, 500 * 58);
         d2=d2+d1;
-    }
+        }
         return Math.round(Math.idiv(d2/sonar_quality, 58)*1.5);
     }
   }
