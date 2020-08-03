@@ -38,6 +38,13 @@ enum L9110moter {
   gyakuten,
   seisi,
 }
+enum sonar_avg{
+    低速高精度,
+    中速中精度,
+    高速低精度,
+}
+
+
 
 
 //% color="#74ad1d" block="ﾕｰﾚｶﾌﾞﾛｯｸ2.52"
@@ -476,11 +483,26 @@ namespace eureka_blocks_soro {
     }
   }
 
-  //% color="#2a2aba" weight=15 blockId=sonar_ping block="超音波距離ｾﾝｻ　|%pin|" group="5_単体ユニットセンサー"
-  export function ping(pin: eureka_tlp): number {
+  //% color="#2a2aba" weight=15 blockId=sonar_ping block="超音波距離ｾﾝｻ　|%pin| |%sonar_quality|" group="5_単体ユニットセンサー"
+  export function ping(pin: eureka_tlp,sonar_quality:sonar_avg): number {
+        if (sonar_quality　==sonar_avg.低速高精度){
+            sonar_quality=20
+        }
+        if (sonar_quality==sonar_avg.中速中精度){
+            sonar_quality=5
+        }        
+        if (sonar_quality==sonar_avg.高速低精度){
+            sonar_quality=1
+        }
+    let  i=0
+    let  d1=0
+    let  d2=0
     switch (pin) {
-      case eureka_tlp.Aﾎﾟｰﾄ:
-        basic.pause(20);
+
+
+    case eureka_tlp.Aﾎﾟｰﾄ:
+    while( i < sonar_quality){
+        basic.pause(10);
         pins.setPull(DigitalPin.P13, PinPullMode.PullNone);
         pins.digitalWritePin(DigitalPin.P13, 0);
         control.waitMicros(2);
@@ -488,9 +510,13 @@ namespace eureka_blocks_soro {
         control.waitMicros(10);
         pins.digitalWritePin(DigitalPin.P13, 0);
         // read
-        const d1 = pins.pulseIn(DigitalPin.P14, PulseValue.High, 500 * 58);
-        return Math.round(Math.idiv(d1, 58)*1.5);
-      case eureka_tlp.Bﾎﾟｰﾄ:
+        d1 = pins.pulseIn(DigitalPin.P14, PulseValue.High, 500 * 58);
+        d2=d2+d1;
+    }
+        return Math.round(Math.idiv(d2/sonar_quality, 58)*1.5);
+
+    case eureka_tlp.Bﾎﾟｰﾄ:
+    while (i<sonar_quality){
         basic.pause(20);
         pins.setPull(DigitalPin.P15, PinPullMode.PullNone);
         pins.digitalWritePin(DigitalPin.P15, 0);
@@ -499,8 +525,10 @@ namespace eureka_blocks_soro {
         control.waitMicros(10);
         pins.digitalWritePin(DigitalPin.P15, 0);
         // read
-        const d2 = pins.pulseIn(DigitalPin.P16, PulseValue.High, 500 * 58);
-        return Math.round(Math.idiv(d2, 58)*1.5);
+        d1 = pins.pulseIn(DigitalPin.P16, PulseValue.High, 500 * 58);
+        d2=d2+d1;
+    }
+        return Math.round(Math.idiv(d2/sonar_quality, 58)*1.5);
     }
   }
 
