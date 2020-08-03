@@ -499,7 +499,7 @@ namespace eureka_blocks_soro {
 
     case eureka_tlp.Aﾎﾟｰﾄ:
         for ( let i=0 ; i<sonar_quality ; i++ ){
-            basic.pause(10);
+            basic.pause(5);
             pins.setPull(DigitalPin.P13, PinPullMode.PullNone);
             pins.digitalWritePin(DigitalPin.P13, 0);
             control.waitMicros(2);
