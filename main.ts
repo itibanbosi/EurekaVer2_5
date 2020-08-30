@@ -622,7 +622,7 @@ namespace eureka_blocks_soro {
     }
     */
 
-  //% weight=20 blockId="Temperature_number"
+  //% weight=31 blockId="Temperature_number"
   //% block="温度ｾﾝｻDS |%p|"
   //% p.fieldEditor="gridpicker" p.fieldOptions.columns=4
   //% group="5_単体ユニットセンサー"
