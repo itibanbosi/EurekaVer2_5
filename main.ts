@@ -43,6 +43,10 @@ enum sonar_avg{
     中速中精度,
     高速低精度,
 }
+enum kyori{
+    短い,
+    長い,
+}
 
 //% color="#74ad1d" block="ﾕｰﾚｶﾌﾞﾛｯｸ2.52"
 
@@ -529,6 +533,55 @@ namespace eureka_blocks_soro {
         return Math.round(Math.idiv(d2/sonar_quality, 58)*1.5);
     }
   }
+
+  //% color="#009A00" weight=14 block="|%sonar_quality| 　きょりが |%limit| cmより |%nagasa| group="5_単体ユニットセンサー"
+  //% limit.min=0 limit.max=50
+  export function sonar_ping_3(sonar_quality:sonar_avg,limit: number ,nagasa:kyori): boolean {
+        if (sonar_quality　==sonar_avg.低速高精度){
+            sonar_quality=20
+        }
+        if (sonar_quality==sonar_avg.中速中精度){
+            sonar_quality=5
+        }        
+        if (sonar_quality==sonar_avg.高速低精度){
+            sonar_quality=1
+        }
+    let  d1=0;
+    let  d2=0;
+
+    for ( let i=0 ; i<sonar_quality ; i++ ){
+    // send
+    basic.pause(5);
+    pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
+    pins.digitalWritePin(DigitalPin.P8, 0);
+    control.waitMicros(2);
+    pins.digitalWritePin(DigitalPin.P8, 1);
+    control.waitMicros(10);
+    pins.digitalWritePin(DigitalPin.P8, 0);
+    // read
+    d1 = pins.pulseIn(DigitalPin.P16, PulseValue.High, 500 * 58);
+    d2= d1+d2;
+    }
+    switch(nagasa){
+        case kyori.短い:
+        if (Math.idiv(d2/sonar_quality, 58) * 1.5 < limit) {
+        return true;
+        } else {
+        return false;
+        }
+        break;
+        case kyori.長い:
+        if (Math.idiv(d2/sonar_quality, 58) * 1.5 < limit) {
+        return false;
+        } else {
+        return true;
+        }
+        break;        
+    }
+  }
+
+
+
 
   //% color="#f071bd" weight=5 blockId=eureka_CdS block="単体_ﾌｫﾄﾘﾌﾚｸﾀｰ |%pin|" group="5_単体ユニットセンサー"
   export function eureka_CdS(pin: eureka_IO): number {
