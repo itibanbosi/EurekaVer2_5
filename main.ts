@@ -484,7 +484,7 @@ namespace eureka_blocks_soro {
     }
   }
 
-  //% color="#2a2aba" weight=15 blockId=sonar_ping block="超音波距離ｾﾝｻ　|%pin| |%sonar_quality|" group="5_単体ユニットセンサー"
+  //% color="#2a2aba" weight=15 blockId=sonar_ping block="超音波きょりｾﾝｻ　|%pin| |%sonar_quality|" group="5_単体ユニットセンサー"
   export function ping(pin: eureka_tlp,sonar_quality:sonar_avg): number {
         if (sonar_quality　==sonar_avg.低速高精度){
             sonar_quality=20
@@ -534,7 +534,7 @@ namespace eureka_blocks_soro {
     }
   }
 
-  //% color="#009A00" weight=14 block="|%sonar_quality| 　きょりが |%limit| cmより |%nagasa| group="5_単体ユニットセンサー"
+  //% color="#009A00" weight=14 blockId=sonar_ping_3 block="|%sonar_quality| 　きょりが |%limit| cmより |%nagasa| group="5_単体ユニットセンサー"
   //% limit.min=0 limit.max=50
   export function sonar_ping_3(sonar_quality:sonar_avg,limit: number ,nagasa:kyori): boolean {
         if (sonar_quality　==sonar_avg.低速高精度){
