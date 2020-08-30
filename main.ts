@@ -534,7 +534,7 @@ namespace eureka_blocks_soro {
     }
   }
 
-  //% color="#009A00" weight=28 blockId=sonar_ping_3 block="|%sonar_quality| 　きょりが |%limit| cmより |%nagasa| group="5_単体ユニットセンサー"
+  //% color="#009A00" weight=28 blockId=sonar_ping_3 block="|%sonar_quality| 　きょりが |%limit| cmより |%nagasa|" group="5_単体ユニットセンサー"
   //% limit.min=0 limit.max=50
   export function sonar_ping_3(sonar_quality:sonar_avg,limit: number ,nagasa:kyori): boolean {
         if (sonar_quality　==sonar_avg.低速高精度){
